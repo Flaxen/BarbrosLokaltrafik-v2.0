@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BarbrosLokaltrafik</string>
+    <!-- Image Descriptions -->
+    <string name="logo_description">The Application Logo</string>
+    <string name="dividing_line">Grey line dividing window and title</string>
+
+    <!-- main menu -->
+    <string name="main_menu_window_title">Hitta på stationen</string>
+    <string name="button_city">City</string>
+    <string name="button_odenplan">Odenplan</string>
+    <string name="input_field_from">Från: </string>
+    <string name="input_field_to">Till: </string>
+    <string name="map_title">Karta</string>
+    <string name="art_button">Konst</string>
+
+    <!-- FromActivity -->
+    <string name="from_activity_window_title">Från: </string>
+
+
+</resources>
