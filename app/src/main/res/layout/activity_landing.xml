@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/landingbackgroudn"
     tools:context="com.example.alcaj.barbroslokaltrafik.LandingActivity">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="368dp"
         android:layout_height="551dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textViewTopRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/landingTopRow"
+            android:textColor="#ecf0f1"
+            android:textSize="80sp"/>
+        <!-- Font seems too big but the font changes in .java file.
+             Test fontsize on device for calibration -->
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-        </LinearLayout>
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/textViewBottomRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/landingBottomRow"
+            android:textColor="#ecf0f1"
+            android:textSize="80sp"/>
+        <!-- Font seems too big but the font changes in .java file.
+             Test fontsize on device for calibration -->
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

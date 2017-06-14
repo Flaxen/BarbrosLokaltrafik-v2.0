@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BarbrosLokaltrafik</string>
+
+    <string name="landingTopRow">HITTA PÅ</string>
+    <string name="landingBottomRow">STATIONEN</string>
+
 </resources>
