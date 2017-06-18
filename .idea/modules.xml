@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BarbrosLokaltrafik.iml" filepath="$PROJECT_DIR$/BarbrosLokaltrafik.iml" />
       <module fileurl="file://$PROJECT_DIR$/BarbrosLokaltrafik-v2.0.iml" filepath="$PROJECT_DIR$/BarbrosLokaltrafik-v2.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BarbrosLokaltrafik-v2.0.iml" filepath="$PROJECT_DIR$/BarbrosLokaltrafik-v2.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

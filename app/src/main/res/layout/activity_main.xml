@@ -10,13 +10,14 @@
     <LinearLayout
         android:layout_width="368dp"
         android:layout_height="551dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
 
         <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -25,18 +26,82 @@
 
                 <!-- TODO: Convert views to buttons with image backgrounds -->
 
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/odenplanthumbnail"/>
+                <Button
+                    android:id="@+id/buttonCity"
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/citythumbnail"
+                    android:text="@string/buttonCity"
+                    android:textColor="#FFFFFF"
+                    android:textSize="40sp" />
 
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/citythumbnail"/>
+                <Button
+                    android:id="@+id/buttonOdenplan"
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/odenplanthumbnail"
+                    android:text="@string/buttonOdenplan"
+                    android:textColor="#FFFFFF"
+                    android:textSize="40sp" />
             </LinearLayout>
         </HorizontalScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="189dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonFrom"
+                style="@style/Base.V12.Widget.AppCompat.EditText"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="@string/buttonFrom" />
+
+            <Button
+                android:id="@+id/buttonTo"
+                style="@style/Base.V12.Widget.AppCompat.EditText"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="@string/buttonTo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonKarta"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/buttonkarta"
+                android:text="@string/buttonKarta"
+                android:textColor="#FFFFFF"
+                android:textSize="40sp" />
+
+            <Button
+                android:id="@+id/buttonKonstverk"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/buttonkonstverk"
+                android:text="@string/buttonKonstverk"
+                android:textColor="#FFFFFF"
+                android:textSize="40sp" />
+
+            <Button
+                android:id="@+id/buttonSprak"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/languageschweden"
+                android:text="@string/buttonSprak"
+                android:textColor="#FFFFFF"
+                android:textSize="40sp" />
+        </LinearLayout>
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buttonFrom">From:</string>
+    <string name="buttonKarta">MAP</string>
+    <string name="buttonKonstverk">ART</string>
+    <string name="buttonSprak">LANGUAGE</string>
+    <string name="buttonTo">To:</string>
+</resources>

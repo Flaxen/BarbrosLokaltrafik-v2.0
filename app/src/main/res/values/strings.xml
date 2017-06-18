@@ -1,7 +1,15 @@
 <resources>
-    <string name="app_name">BarbrosLokaltrafik</string>
+    <string name="app_name" translatable="false">BarbrosLokaltrafik</string>
 
-    <string name="landingTopRow">HITTA PÅ</string>
-    <string name="landingBottomRow">STATIONEN</string>
+    <string name="landingTopRow" translatable="false">HITTA PÅ</string>
+    <string name="landingBottomRow" translatable="false">STATIONEN</string>
+
+    <string name="buttonFrom">Från: </string>
+    <string name="buttonTo">Till: </string>
+    <string name="buttonCity" translatable="false">CITY</string>
+    <string name="buttonOdenplan" translatable="false">ODENPLAN</string>
+    <string name="buttonKarta">KARTA</string>
+    <string name="buttonKonstverk">KONSTVERK</string>
+    <string name="buttonSprak">SPRÅK</string>
 
 </resources>
