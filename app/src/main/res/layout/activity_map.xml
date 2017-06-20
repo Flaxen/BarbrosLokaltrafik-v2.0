@@ -5,6 +5,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.alcaj.barbroslokaltrafik.MapActivity">
+    tools:context="comalcaj.barbroslokaltrafik.MapActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="387dp"
+        android:layout_height="534dp"
+        app:srcCompat="@drawable/mellanplankarta1"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-16dp"
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/button6"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:layout_width="33dp"
+        android:layout_height="40dp"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="1dp"
+        android:onClick="till_frantill"/>
+
 
 </android.support.constraint.ConstraintLayout>

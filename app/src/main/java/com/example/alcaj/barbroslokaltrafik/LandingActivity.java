@@ -1,5 +1,5 @@
 
-package com.example.alcaj.barbroslokaltrafik;
+package comalcaj.barbroslokaltrafik;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -16,6 +16,8 @@ import static android.R.attr.bottom;
 import static android.R.attr.typeface;
 
 public class LandingActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,11 @@ public class LandingActivity extends AppCompatActivity {
             public void run() {
                 Log.d("BL", "Does this look delayed to you?");
                 Intent myIntent = new Intent(LandingActivity.this, MainActivity.class);
+                myIntent.putExtra("fromInput", getResources().getString(R.string.buttonFrom));
+                myIntent.putExtra("toInput", getResources().getString(R.string.buttonTo));
                 startActivity(myIntent);
+                finish();
+
             }
         }, 2000);
 

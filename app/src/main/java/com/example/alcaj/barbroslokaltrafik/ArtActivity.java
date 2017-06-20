@@ -1,4 +1,4 @@
-package com.example.alcaj.barbroslokaltrafik;
+package comalcaj.barbroslokaltrafik;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

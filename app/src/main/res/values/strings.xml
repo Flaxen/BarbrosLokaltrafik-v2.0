@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">BarbrosLokaltrafik</string>
+    <string name="app_name" translatable="false">Hitta på stationen</string>
 
     <string name="landingTopRow" translatable="false">HITTA PÅ</string>
     <string name="landingBottomRow" translatable="false">STATIONEN</string>
@@ -11,5 +11,29 @@
     <string name="buttonKarta">KARTA</string>
     <string name="buttonKonstverk">KONSTVERK</string>
     <string name="buttonSprak">SPRÅK</string>
+
+    <string name="EditTextFieldSearch">Sök</string>
+    <string name="TextFieldPositionOnMap">Välj på karta</string>
+
+    <string name="OnYourWayTitle">PÅ VÄG</string>
+    <string name="ArtOnTheWay">På vägen möter du: </string>
+
+    <string name="ArtWindowTitle">Konst på Stockholm City</string>
+    <string name="OtherStationTitle">Konsten på Stockholm Odenplan</string>
+    <string name="konstDesc1" translatable="false">Lars Arrhenius \"Cuckoo clock\"</string>
+    <string name="konstDesc2">Karin Törnell \"Andetag och Fotfäste\"</string>
+    <string name="konstDesc3">Juri Markkula \"La Divina Commedia\"</string>
+    <string name="konstDesc4">Mikael Pauli \"Moaritisk absorbent\"</string>
+    <string name="konstDesc5">Karin Lindh \"Pendlarkatedralen\"</string>
+    <string name="konstDesc6">Astrid Sylwan \"Skies\"</string>
+    <string name="konstDesc7">Peter Svedberg \"Stad, Träd och Äng\"</string>
+    <string name="konstDesc8">Åsa Lindström \"Vardagens sal\"</string>
+    <string name="konstDesc9">Anders Kappel \"Itinerary\"</string>
+    <string name="konstDesc10" translatable="false">Sunniva McAlinden \"Länk\"</string>
+    <string name="konstDesc11" translatable="false">David Svensson \"Life Line\"</string>
+    <string name="konstDesc12" translatable="false">Mari Rantanen \"Odens Trädgård\"</string>
+    <string name="konstDesc13" translatable="false">Thomas Bernstrand \"Rörlig rymd\"</string>
+    <string name="konstDesc14" translatable="false">Jessica Faiss \"Voyage\"</string>
+
 
 </resources>
