@@ -10,24 +10,22 @@
     <string name="EditTextFieldSearch">Search</string>
     <string name="OnYourWayTitle">ON YOUR WAY</string>
     <string name="TextFieldPositionOnMap">Choose position on map</string>
-    <string name="konstDesc10">Sunniva McAlinden \"Länk\"</string>
-    <string name="konstDesc10">Sunniva McAlinden \"Länk\"</string>
-    <string name="konstDesc10">Sunniva McAlinden \"Länk\"</string>
-    <string name="konstDesc10">Sunniva McAlinden \"Länk\"</string>
-    <string name="konstDesc10">Sunniva McAlinden \"Länk\"</string>
-    <string name="konstDesc10"></string>
-    <string name="konstDesc10">Sunniva McAlinden \"Länk\"</string>
-    <string name="konstDesc10"></string>
-    <string name="konstDesc10">Sunniva McAlinden \"Länk\"</string>
-    <string name="konstDesc10">Sunniva McAlinden \"Länk\"</string>
-    <string name="konstDesc10">Sunniva McAlinden \"Länk\"</string>
-    <string name="konstDesc10">Sunniva McAlinden \"Länk\"</string>
-    <string name="konstDesc10">Sunniva McAlinden \"Länk\"</string>
-    <string name="konstDesc10">Sunniva McAlinden \"Länk\"</string>
-    <string name="konstDesc10">Sunniva McAlinden \"Länk\"</string>
-    <string name="konstDesc10">Sunniva McAlinden \"Länk\"</string>
-    <string name="konstDesc10"></string>
-    <string name="konstDesc10">Sunniva McAlinden \\\"Länk\\\"</string>
-    <string name="konstDesc10">Sunivva McAliden \"Länk\" (Link)</string>
-    <string name="konstDesc10">Sunniva McAliden \"Länk\" (Link)</string>
+    <string name="OtherStationTitle">Art at Stockholm Odenplan</string>
+
+
+    <string name="konstDesc1">Lars Arrhenius \"Cuckoo clock\"</string>
+    <string name="konstDesc2">Karin Törnell \"Andetag och Fotfäste\" (Breath and Foothold)</string>
+    <string name="konstDesc3">Juri Markkula \"La Divina Commedia\"</string>
+    <string name="konstDesc4">Mikael Pauli \"Moaritisk absorbent\"</string>
+    <string name="konstDesc5">Karin Lindh \"Pendlarkatedralen\" (Commuter Cathedral)</string>
+    <string name="konstDesc6">Astrid Sylwan \"Skies\"</string>
+    <string name="konstDesc7">Peter Svedberg \"Stad, Träd och Äng\" (City, Tree, and Field)</string>
+    <string name="konstDesc8">Åsa Lindström \"Vardagens sal\" (The everyday hall)</string>
+    <string name="konstDesc9">Anders Kappel \"Itinerary\"</string>
+    <string name="konstDesc10">Sunniva McAlinden \"Länk\"(Link)</string>
+    <string name="konstDesc11">David Svensson \"Life Line\"</string>
+    <string name="konstDesc12">Mari Rantanen \"Odens Trädgård\ (The Gardens of Odin)"</string>
+    <string name="konstDesc13">Thomas Bernstrand \"Rörlig rymd\ (Mobile space)"</string>
+    <string name="konstDesc14">Jessica Faiss \"Voyage\"</string>
+
 </resources>
