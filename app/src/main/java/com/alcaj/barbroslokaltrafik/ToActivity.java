@@ -1,4 +1,4 @@
-package comalcaj.barbroslokaltrafik;
+package com.alcaj.barbroslokaltrafik;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,14 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class FromActivity extends AppCompatActivity {
-
+public class ToActivity extends AppCompatActivity {
 
     //TODO: convert all pieces of art to constants
 
     final String FROM_INPUT = "fromInput";
     final String TO_INPUT = "toInput";
-    
+
+
     Button mButtonAndetag;
     Button mButtonRymd;
     Button mButtonStadstradgard;
@@ -25,10 +25,12 @@ public class FromActivity extends AppCompatActivity {
 
     EditText mEditTextSearchField;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_from);
+        setContentView(R.layout.activity_to);
 
         mButtonAndetag = (Button) findViewById(R.id.buttonAndetag);
         mButtonRymd = (Button) findViewById(R.id.buttonRymd);
@@ -39,20 +41,20 @@ public class FromActivity extends AppCompatActivity {
 
         mEditTextSearchField = (EditText) findViewById(R.id.editTextSearch);
 
-        final Intent toMainActivity = new Intent(FromActivity.this, MainActivity.class);
-        final Intent toChooseOnMap = new Intent(FromActivity.this, ChoosePositionOnMap.class);
+        final Intent toMainActivity = new Intent(ToActivity.this, MainActivity.class);
+        final Intent toChooseOnMap = new Intent(ToActivity.this, ChoosePositionOnMap.class);
 
-        final String oldTo = getIntent().getStringExtra("toOld");
+        final String oldFrom = getIntent().getStringExtra("fromOld");
+        final Boolean isSwedish = getIntent().getExtras().getBoolean("isSwedish");
 
-        //TODO: Shorten all this to methods
-
-
+        Log.d("SL", "Swedish status before as ToActivity input: " + isSwedish);
 
         mButtonAndetag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toMainActivity.putExtra(FROM_INPUT, "Andetag");
-                toMainActivity.putExtra(TO_INPUT, oldTo);
+                toMainActivity.putExtra(TO_INPUT, "Andetag");
+                toMainActivity.putExtra(FROM_INPUT, oldFrom);
+                toMainActivity.putExtra("isSwedish", isSwedish);
                 finish();
                 MainActivity.main.finish();
                 startActivity(toMainActivity);
@@ -62,8 +64,9 @@ public class FromActivity extends AppCompatActivity {
         mButtonRymd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toMainActivity.putExtra(FROM_INPUT, "Rörlig Rymd");
-                toMainActivity.putExtra(TO_INPUT, oldTo);
+                toMainActivity.putExtra(TO_INPUT, "Rörlig Rymd");
+                toMainActivity.putExtra(FROM_INPUT, oldFrom);
+                toMainActivity.putExtra("isSwedish", isSwedish);
                 finish();
                 MainActivity.main.finish();
                 startActivity(toMainActivity);
@@ -73,8 +76,9 @@ public class FromActivity extends AppCompatActivity {
         mButtonStadstradgard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toMainActivity.putExtra(FROM_INPUT, "Stadsträdgård");
-                toMainActivity.putExtra(TO_INPUT, oldTo);
+                toMainActivity.putExtra(TO_INPUT, "Stadsträdgård");
+                toMainActivity.putExtra(FROM_INPUT, oldFrom);
+                toMainActivity.putExtra("isSwedish", isSwedish);
                 finish();
                 MainActivity.main.finish();
                 startActivity(toMainActivity);
@@ -84,8 +88,9 @@ public class FromActivity extends AppCompatActivity {
         mButtonOdentradgard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toMainActivity.putExtra(FROM_INPUT, "Odens trädgård");
-                toMainActivity.putExtra(TO_INPUT, oldTo);
+                toMainActivity.putExtra(TO_INPUT, "Odens trädgård");
+                toMainActivity.putExtra(FROM_INPUT, oldFrom);
+                toMainActivity.putExtra("isSwedish", isSwedish);
                 finish();
                 MainActivity.main.finish();
                 startActivity(toMainActivity);
@@ -95,8 +100,9 @@ public class FromActivity extends AppCompatActivity {
         mButtonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toMainActivity.putExtra(FROM_INPUT, mEditTextSearchField.getText().toString());
-                toMainActivity.putExtra(TO_INPUT, oldTo);
+                toMainActivity.putExtra(TO_INPUT, mEditTextSearchField.getText().toString());
+                toMainActivity.putExtra(FROM_INPUT, oldFrom);
+                toMainActivity.putExtra("isSwedish", isSwedish);
 
 
 //                Log.d("SL", mEditTextSearchField.getText().toString());
@@ -106,6 +112,8 @@ public class FromActivity extends AppCompatActivity {
                 startActivity(toMainActivity);
             }
         });
+        Log.d("SL", "Swedish status before as ToActivity output: " + isSwedish);
+
 
         mButtonChooseOnMap.setOnClickListener(new View.OnClickListener() {
             @Override

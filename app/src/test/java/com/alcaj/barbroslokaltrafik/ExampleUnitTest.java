@@ -1,4 +1,4 @@
-package comalcaj.barbroslokaltrafik;
+package com.alcaj.barbroslokaltrafik;
 
 import org.junit.Test;
 

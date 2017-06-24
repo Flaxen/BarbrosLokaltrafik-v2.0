@@ -1,13 +1,13 @@
-package comalcaj.barbroslokaltrafik;
+package com.alcaj.barbroslokaltrafik;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ArtActivity extends AppCompatActivity {
+public class MapActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_art);
+        setContentView(R.layout.activity_map);
     }
 }

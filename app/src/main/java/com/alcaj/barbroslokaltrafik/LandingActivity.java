@@ -1,5 +1,5 @@
 
-package comalcaj.barbroslokaltrafik;
+package com.alcaj.barbroslokaltrafik;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
+import com.alcaj.barbroslokaltrafik.MainActivity;
+
 import static android.R.attr.bottom;
 import static android.R.attr.typeface;
 
@@ -23,6 +25,8 @@ public class LandingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
+
+        final Boolean isSwedish = true;
 
         // Changes the Landing Activity font to Bebas
         TextView topRow = (TextView) findViewById(R.id.textViewTopRow);
@@ -45,6 +49,7 @@ public class LandingActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(LandingActivity.this, MainActivity.class);
                 myIntent.putExtra("fromInput", getResources().getString(R.string.buttonFrom));
                 myIntent.putExtra("toInput", getResources().getString(R.string.buttonTo));
+                myIntent.putExtra("isSwedish", isSwedish);
                 startActivity(myIntent);
                 finish();
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:addStatesFromChildren="false"
-    tools:context="comalcaj.barbroslokaltrafik.FromActivity">
+    tools:context="com.alcaj.barbroslokaltrafik.FromActivity">
 
 
     <LinearLayout

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/landingbackground"
-    tools:context="comalcaj.barbroslokaltrafik.LandingActivity">
+    tools:context="com.alcaj.barbroslokaltrafik.LandingActivity">
 
     <LinearLayout
         android:layout_width="368dp"

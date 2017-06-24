@@ -1,4 +1,4 @@
-package comalcaj.barbroslokaltrafik;
+package com.alcaj.barbroslokaltrafik;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -32,7 +32,10 @@ public class MainActivity extends AppCompatActivity {
     Button mButtonSearch;
 
     int mStationChoice; // 0 = city, 1 = oden
-    boolean isSwedish = true;
+
+    Boolean isSwedish = true;
+    String from;
+    String to;
 
     public static Activity main; //used to exit activity when new data becomes present
 
@@ -43,8 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
         main = this;
 
-        String from = getIntent().getStringExtra("fromInput");
-        String to = getIntent().getStringExtra("toInput");
+        from = getIntent().getStringExtra("fromInput");
+        to = getIntent().getStringExtra("toInput");
+        isSwedish = getIntent().getExtras().getBoolean("isSwedish");
 
         mButtonCity = (Button) findViewById(R.id.buttonCity);
         mButtonOdenplan = (Button) findViewById(R.id.buttonOdenplan);
@@ -57,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
 
         mButtonFrom.setText(from);
         mButtonTo.setText(to);
+
+        if (isSwedish == true) {
+            mButtonLanguage.setBackgroundResource(R.drawable.languageschweden);
+        } else if (isSwedish == false) {
+            mButtonLanguage.setBackgroundResource(R.drawable.languageenglish);
+
+        }
 
         final Intent toFrom = new Intent(MainActivity.this, FromActivity.class);
         final Intent toTo = new Intent(MainActivity.this, ToActivity.class);
@@ -81,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 toFrom.putExtra("fromOld", mButtonFrom.getText().toString());
                 toFrom.putExtra("toOld", mButtonTo.getText().toString());
+                toFrom.putExtra("isSwedish", isSwedish);
                 startActivity(toFrom);
             }
         });
@@ -89,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 toTo.putExtra("fromOld", mButtonFrom.getText().toString());
                 toTo.putExtra("toOld", mButtonTo.getText().toString());
+                toTo.putExtra("isSwedish", isSwedish);
                 startActivity(toTo);
             }
         });
@@ -96,28 +109,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(toKarta);
+                toKarta.putExtra("isSwedish", isSwedish);
             }
         });
         mButtonKonstverk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(toKonstverk);
+                toKonstverk.putExtra("isSwedish", isSwedish);
             }
         });
         mButtonLanguage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //TODO: Add language switch function
-
-//                Log.d("SL", "Is swedish before: " + isSwedish);
-//                if (isSwedish == true) {
-//                    mButtonLanguage.setBackgroundResource(R.drawable.languageenglish);
-//                    isSwedish = false;
-//                } else if (isSwedish == false) {
-//                    mButtonLanguage.setBackgroundResource(R.drawable.languageschweden);
-//                    isSwedish = true;
-//                }
-                Log.d("SL", "Is swedish after: " + isSwedish);
+                Log.d("SL", "Is swedish before: " + isSwedish);
                 changeLanguage();
             }
         });
@@ -127,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
                 toNavigation.putExtra(INPUT_POSITION_FROM_TO_NAV ,mButtonFrom.getText().toString());
                 toNavigation.putExtra(INPUT_POSITION_TO_TO_NAV, mButtonTo.getText().toString());
+                toNavigation.putExtra("isSwedish", isSwedish);
                 startActivity(toNavigation);
 
                 Log.d("SL", "DATA TO NAV" + mButtonFrom.getBackground().toString() + " " +
@@ -137,78 +144,50 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeLanguage() {
-        Log.d("SL", "Cahngin langguage");
-//        if (isSwedish == true){
-//
-////            Locale locale = new Locale("en");
-////            Resources resources = getResources();
-////            Configuration configuration = resources.getConfiguration();
-////            DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-////            configuration.setLocale(locale);
-////            getApplicationContext().createConfigurationContext(configuration);
-////            Log.d("SL", "set to english");
-//
-//
-//        } else  if (isSwedish == false) {
-//
-////            Locale locale = new Locale("default");
-////            Resources resources = getResources();
-////            Configuration configuration = resources.getConfiguration();
-////            DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-////            configuration.setLocale(locale);
-////            getApplicationContext().createConfigurationContext(configuration);
-////
-////            Log.d("SL", "set to english2");
-////            Log.d("SL", "wat" + getLocalClassName());
-//
-//        }
+
+        if (isSwedish == true) {
+
+            Resources res = getResources();
+            // Change locale settings in the app.
+            DisplayMetrics dm = res.getDisplayMetrics();
+            android.content.res.Configuration conf = res.getConfiguration();
+            conf.setLocale(new Locale("EN".toLowerCase())); // API 17+ only.
+            // Use conf.locale = new Locale(...) if targeting lower versions
+            res.updateConfiguration(conf, dm);
+
+            isSwedish = false;
+        } else  if (isSwedish == false) {
+
+            isSwedish = true;
+
+            Resources res = getResources();
+            // Change locale settings in the app.
+            DisplayMetrics dm = res.getDisplayMetrics();
+            android.content.res.Configuration conf = res.getConfiguration();
+            conf.setLocale(new Locale("DEFAULT".toLowerCase())); // API 17+ only.
+            // Use conf.locale = new Locale(...) if targeting lower versions
+            res.updateConfiguration(conf, dm);
+        }
+        Log.d("SL", "Changing language. New value of isSwedish = " + isSwedish);
+
         Intent refreshMain = new Intent(this, MainActivity.class);
-        refreshMain.putExtra("intentIsSwedish", isSwedish);
+        refreshMain.putExtra("isSwedish", isSwedish);
+        refreshMain.putExtra("fromInput", getResources().getString(R.string.buttonFrom));
+        refreshMain.putExtra("toInput", getResources().getString(R.string.buttonTo));
         finish();
         startActivity(refreshMain);
     }
-
-
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        Resources res = getResources();
-        // Change locale settings in the app.
-        DisplayMetrics dm = res.getDisplayMetrics();
-        android.content.res.Configuration conf = res.getConfiguration();
-        conf.setLocale(new Locale("EN".toLowerCase())); // API 17+ only.
-        // Use conf.locale = new Locale(...) if targeting lower versions
-        res.updateConfiguration(conf, dm);
+        isSwedish = getIntent().getExtras().getBoolean("isSwedish");
+        from = getIntent().getStringExtra("fromInput");
+        to = getIntent().getStringExtra("toInput");
 
 
-//        if (isSwedish == false) {
-//            Resources res = getResources();
-//            // Change locale settings in the app.
-//            DisplayMetrics dm = res.getDisplayMetrics();
-//            android.content.res.Configuration conf = res.getConfiguration();
-//            conf.setLocale(new Locale("DEFAULT".toLowerCase())); // API 17+ only.
-//            // Use conf.locale = new Locale(...) if targeting lower versions
-//            res.updateConfiguration(conf, dm);
-//
-//            mButtonLanguage.setBackgroundResource(R.drawable.languageschweden);
-//
-//
-//            isSwedish = true;
-//        } else {
-//
-//            Resources res = getResources();
-//            // Change locale settings in the app.
-//            DisplayMetrics dm = res.getDisplayMetrics();
-//            android.content.res.Configuration conf = res.getConfiguration();
-//            conf.setLocale(new Locale("EN".toLowerCase())); // API 17+ only.
-//            // Use conf.locale = new Locale(...) if targeting lower versions
-//            res.updateConfiguration(conf, dm);
-//
-//            mButtonLanguage.setBackgroundResource(R.drawable.languageenglish);
-//
-//            isSwedish = false;
-//        }
+
+
     }
 }

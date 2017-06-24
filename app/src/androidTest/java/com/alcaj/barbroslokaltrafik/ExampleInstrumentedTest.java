@@ -1,4 +1,4 @@
-package comalcaj.barbroslokaltrafik;
+package com.alcaj.barbroslokaltrafik;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("comalcaj.barbroslokaltrafik", appContext.getPackageName());
+        assertEquals("com.alcaj.barbroslokaltrafik", appContext.getPackageName());
     }
 }
