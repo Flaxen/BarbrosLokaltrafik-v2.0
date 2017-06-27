@@ -33,8 +33,8 @@ public class ToActivity extends AppCompatActivity {
         setContentView(R.layout.activity_to);
 
         mButtonAndetag = (Button) findViewById(R.id.buttonAndetag);
-        mButtonRymd = (Button) findViewById(R.id.buttonRymd);
-        mButtonStadstradgard = (Button) findViewById(R.id.buttonStadstradgard);
+        mButtonRymd = (Button) findViewById(R.id.buttonRorligRymd);
+        mButtonStadstradgard = (Button) findViewById(R.id.buttonStadTradAng);
         mButtonOdentradgard = (Button) findViewById(R.id.buttonOdentradgard);
         mButtonSearch = (Button) findViewById(R.id.buttonSearch);
         mButtonChooseOnMap = (Button) findViewById(R.id.buttonChooseOnMap);

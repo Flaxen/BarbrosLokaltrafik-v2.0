@@ -15,73 +15,107 @@ public class FromActivity extends AppCompatActivity {
 
     final String FROM_INPUT = "fromInput";
     final String TO_INPUT = "toInput";
-    
-    Button mButtonAndetag;
-    Button mButtonRymd;
-    Button mButtonStadstradgard;
-    Button mButtonOdentradgard;
+
     Button mButtonSearch;
     Button mButtonChooseOnMap;
-
     EditText mEditTextSearchField;
+
+    Intent toMainActivity;
+    Intent toChooseOnMap;
+
+    String oldTo;
+    Boolean isSwedish;
+    String stationChoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_from);
 
-        mButtonAndetag = (Button) findViewById(R.id.buttonAndetag);
-        mButtonRymd = (Button) findViewById(R.id.buttonRymd);
-        mButtonStadstradgard = (Button) findViewById(R.id.buttonStadstradgard);
-        mButtonOdentradgard = (Button) findViewById(R.id.buttonOdentradgard);
+        Button mButtonAndetag = (Button) findViewById(R.id.buttonAndetag);
+        Button mButtonRorligRymd = (Button) findViewById(R.id.buttonRorligRymd);
+        Button mButtonStadTradAng = (Button) findViewById(R.id.buttonStadTradAng);
+        Button mButtonOdentradgard = (Button) findViewById(R.id.buttonOdentradgard);
+        Button mButtonSkies = (Button) findViewById(R.id.buttonSkies);
+        Button mButtonLaDivina = (Button) findViewById(R.id.buttonLaDivina);
+        Button mButtonVardagSal = (Button) findViewById(R.id.buttonVardagSal);
+        Button mButtonCuckoo = (Button) findViewById(R.id.buttonCuckoo);
+        Button mButtonMoaritisk = (Button) findViewById(R.id.buttonMoaritisk);
+        Button mButtonPendlarkatedral = (Button) findViewById(R.id.buttonPendlarkatedral);
+        Button mButtonVoyage = (Button) findViewById(R.id.buttonVoyage);
+        Button mButtonItinerary = (Button) findViewById(R.id.buttonItinerary);
+        Button mButtonLank = (Button) findViewById(R.id.buttonLank);
+        Button mButtonLifeline = (Button) findViewById(R.id.buttonLifeline);
+
         mButtonSearch = (Button) findViewById(R.id.buttonSearch);
         mButtonChooseOnMap = (Button) findViewById(R.id.buttonChooseOnMap);
 
         mEditTextSearchField = (EditText) findViewById(R.id.editTextSearch);
 
-        final Intent toMainActivity = new Intent(FromActivity.this, MainActivity.class);
-        final Intent toChooseOnMap = new Intent(FromActivity.this, ChoosePositionOnMap.class);
+        toMainActivity = new Intent(FromActivity.this, MainActivity.class);
+        toChooseOnMap = new Intent(FromActivity.this, ChoosePositionOnMap.class);
 
-        final String oldTo = getIntent().getStringExtra("toOld");
-        final Boolean isSwedish = getIntent().getExtras().getBoolean("isSwedish");
+        oldTo = getIntent().getStringExtra("toOld");
+        isSwedish = getIntent().getExtras().getBoolean("isSwedish");
+        stationChoice = getIntent().getStringExtra("stationChoice");
+
+        if (stationChoice == "city") {
+            // Makes the example buttons only contain pieces of art and stores at the chosen station.
+
+            mButtonVoyage.setVisibility(View.GONE);
+            mButtonItinerary.setVisibility(View.GONE);
+            mButtonLank.setVisibility(View.GONE);
+            mButtonRorligRymd.setVisibility(View.GONE);
+            mButtonLifeline.setVisibility(View.GONE);
+            mButtonOdentradgard.setVisibility(View.GONE);
+
+            //TODO: Change map for choice of position
+
+        } else if (stationChoice == "odenplan") {
+
+            mButtonSkies.setVisibility(View.GONE);
+            mButtonAndetag.setVisibility(View.GONE);
+            mButtonStadTradAng.setVisibility(View.GONE);
+            mButtonLaDivina.setVisibility(View.GONE);
+            mButtonVardagSal.setVisibility(View.GONE);
+            mButtonCuckoo.setVisibility(View.GONE);
+            mButtonMoaritisk.setVisibility(View.GONE);
+            mButtonPendlarkatedral.setVisibility(View.GONE);
+
+            //TODO: Change map for choice of position
+
+
+        } else {
+            Log.d("SL", "Error stationChoice FromActivity");
+        }
+
+
 
         //TODO: Shorten all this to methods
-
-
+        //TODO: SUPER TODO!!! Convert all art piece names to constants
+        //TODO: !!! Make constant strings pull content from res/strings.xml
 
         mButtonAndetag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Andetag");
-                toMainActivity.putExtra(TO_INPUT, oldTo);
-                toMainActivity.putExtra("isSwedish", isSwedish);
-                finish();
-                MainActivity.main.finish();
-                startActivity(toMainActivity);
+                forslagButton();
             }
         });
 
-        mButtonRymd.setOnClickListener(new View.OnClickListener() {
+        mButtonRorligRymd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Rörlig Rymd");
-                toMainActivity.putExtra(TO_INPUT, oldTo);
-                toMainActivity.putExtra("isSwedish", isSwedish);
-                finish();
-                MainActivity.main.finish();
-                startActivity(toMainActivity);
+                forslagButton();
             }
         });
 
-        mButtonStadstradgard.setOnClickListener(new View.OnClickListener() {
+        mButtonStadTradAng.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Stadsträdgård");
-                toMainActivity.putExtra(TO_INPUT, oldTo);
-                toMainActivity.putExtra("isSwedish", isSwedish);
-                finish();
-                MainActivity.main.finish();
-                startActivity(toMainActivity);
+                forslagButton();
             }
         });
 
@@ -89,11 +123,87 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Odens trädgård");
-                toMainActivity.putExtra(TO_INPUT, oldTo);
-                toMainActivity.putExtra("isSwedish", isSwedish);
-                finish();
-                MainActivity.main.finish();
-                startActivity(toMainActivity);
+                forslagButton();
+            }
+        });
+
+        mButtonSkies.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toMainActivity.putExtra(FROM_INPUT, "Skies");
+                forslagButton();
+            }
+        });
+
+        mButtonLaDivina.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toMainActivity.putExtra(FROM_INPUT, "La Divina Commedia");
+                forslagButton();
+            }
+        });
+
+        mButtonVardagSal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toMainActivity.putExtra(FROM_INPUT, "Vardagens Sal");
+                forslagButton();
+            }
+        });
+
+        mButtonCuckoo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toMainActivity.putExtra(FROM_INPUT, "Cuckoo Clock");
+                forslagButton();
+            }
+        });
+
+        mButtonMoaritisk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toMainActivity.putExtra(FROM_INPUT, "Moaritisk Absorbent");
+                forslagButton();
+            }
+        });
+
+        mButtonPendlarkatedral.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toMainActivity.putExtra(FROM_INPUT, "Pendlarkatedralen");
+                forslagButton();
+            }
+        });
+
+        mButtonVoyage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toMainActivity.putExtra(FROM_INPUT, "Voyage");
+                forslagButton();
+            }
+        });
+
+        mButtonItinerary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toMainActivity.putExtra(FROM_INPUT, "Itinerary");
+                forslagButton();
+            }
+        });
+
+        mButtonLank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toMainActivity.putExtra(FROM_INPUT, "Länk");
+                forslagButton();
+            }
+        });
+
+        mButtonLifeline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toMainActivity.putExtra(FROM_INPUT, "Life Line");
+                forslagButton();
             }
         });
 
@@ -129,10 +239,20 @@ public class FromActivity extends AppCompatActivity {
             }
         });
 
+    }
 
 
+
+    public void forslagButton() {
+
+        toMainActivity.putExtra(TO_INPUT, oldTo);
+        toMainActivity.putExtra("isSwedish", isSwedish);
+        finish();
+        MainActivity.main.finish();
+        startActivity(toMainActivity);
 
     }
+
 
     public void ShowDialog() {
 

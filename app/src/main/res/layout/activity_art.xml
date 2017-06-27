@@ -44,7 +44,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:background="@drawable/cuckoo_clock550x200" />
+                        android:background="@drawable/artcuckooclockthumbnail" />
 
                     <TextView
                         android:id="@+id/textViewImageDesc1"
@@ -65,7 +65,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:background="@drawable/andetagochfotfaste" />
+                        android:background="@drawable/artandetagfotfastethumbnail" />
 
                     <TextView
                         android:id="@+id/textViewImageDesc2"
@@ -86,7 +86,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:background="@drawable/ladivinacommedia" />
+                        android:background="@drawable/citythumbnail" />
 
                     <TextView
                         android:id="@+id/textViewImageDesc3"
@@ -107,7 +107,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:background="@drawable/moaritisk_absorbent_550x200" />
+                        android:background="@drawable/artmoaritiskabsorbentthumbnail" />
 
                     <TextView
                         android:id="@+id/textViewImageDesc4"
@@ -128,7 +128,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:background="@drawable/pendlarkatedralen" />
+                        android:background="@drawable/artpendlarkatedralenthumbnail" />
 
                     <TextView
                         android:id="@+id/textViewImageDesc5"
@@ -149,7 +149,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:background="@drawable/skies" />
+                        android:background="@drawable/artskiesthumbnail" />
 
                     <TextView
                         android:id="@+id/textViewImageDesc6"
@@ -170,7 +170,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:background="@drawable/stadtradang" />
+                        android:background="@drawable/artstadtradangthumbnail" />
 
                     <TextView
                         android:id="@+id/textViewImageDesc7"
@@ -191,7 +191,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:background="@drawable/vardagenssal" />
+                        android:background="@drawable/artvardagsalthumbnail" />
 
                     <TextView
                         android:id="@+id/textViewImageDesc8"
@@ -220,7 +220,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:background="@drawable/itinerary" />
+                        android:background="@drawable/artitinerarythumbnail" />
 
                     <TextView
                         android:id="@+id/textViewImageDesc9"
@@ -241,7 +241,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:background="@drawable/lank_550x200" />
+                        android:background="@drawable/artlankthumbnail" />
 
                     <TextView
                         android:id="@+id/textViewImageDesc10"
@@ -262,7 +262,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:background="@drawable/life_line" />
+                        android:background="@drawable/artlifelinethumbnail" />
 
                     <TextView
                         android:id="@+id/textViewImageDesc11"
@@ -283,7 +283,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:background="@drawable/odens_tradgord" />
+                        android:background="@drawable/artodenstradgardthumbnail" />
 
                     <TextView
                         android:id="@+id/textViewImageDesc12"
@@ -304,7 +304,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:background="@drawable/rorlig_rymd" />
+                        android:background="@drawable/artrorligrymdthumbnail" />
 
                     <TextView
                         android:id="@+id/textViewImageDesc13"
@@ -325,7 +325,7 @@
                         android:layout_width="150dp"
                         android:layout_height="100dp"
                         android:layout_weight="1"
-                        android:background="@drawable/voyage_275x100" />
+                        android:background="@drawable/artvoyagethumbnail" />
 
                     <TextView
                         android:id="@+id/textViewImageDesc14"

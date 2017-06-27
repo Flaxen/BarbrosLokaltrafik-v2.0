@@ -36,27 +36,107 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/buttonSkies"
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/artskiesthumbnail"
+                    android:text="" />
+
+                <Button
                     android:id="@+id/buttonAndetag"
                     android:layout_width="160dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:background="@drawable/andetagochfotfaste"
+                    android:background="@drawable/artandetagfotfastethumbnail"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/buttonRymd"
+                    android:id="@+id/buttonStadTradAng"
                     android:layout_width="160dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:background="@drawable/rorlig_rymd"
+                    android:background="@drawable/artstadtradangthumbnail"
                     android:text="" />
 
                 <Button
-                    android:id="@+id/buttonStadstradgard"
+                    android:id="@+id/buttonLaDivina"
                     android:layout_width="160dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:background="@drawable/stadtradang"
+                    android:background="@drawable/citythumbnail"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/buttonVardagSal"
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/artvardagsalthumbnail"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/buttonCuckoo"
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/artcuckooclockthumbnail"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/buttonMoaritisk"
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/artmoaritiskabsorbentthumbnail"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/buttonPendlarkatedral"
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/artpendlarkatedralenthumbnail"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/buttonVoyage"
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/artvoyagethumbnail"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/buttonItinerary"
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/artitinerarythumbnail"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/buttonLank"
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/artlankthumbnail"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/buttonRorligRymd"
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/artrorligrymdthumbnail"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/buttonLifeline"
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/artlifelinethumbnail"
                     android:text="" />
 
                 <Button
@@ -64,7 +144,7 @@
                     android:layout_width="160dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:background="@drawable/odens_tradgord"
+                    android:background="@drawable/artodenstradgardthumbnail"
                     android:text="" />
 
             </LinearLayout>

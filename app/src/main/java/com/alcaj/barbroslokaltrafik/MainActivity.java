@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     Button mButtonLanguage;
     Button mButtonSearch;
 
-    int mStationChoice; // 0 = city, 1 = oden
+    String stationChoice;
 
     Boolean isSwedish = true;
     String from;
@@ -78,13 +78,13 @@ public class MainActivity extends AppCompatActivity {
         mButtonCity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mStationChoice = 0;
+                stationChoice = "city";
             }
         });
         mButtonOdenplan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mStationChoice = 1;
+                stationChoice = "odenplan";
             }
         });
         mButtonFrom.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 toFrom.putExtra("fromOld", mButtonFrom.getText().toString());
                 toFrom.putExtra("toOld", mButtonTo.getText().toString());
                 toFrom.putExtra("isSwedish", isSwedish);
+                toFrom.putExtra("stationChoice", stationChoice);
                 startActivity(toFrom);
             }
         });
@@ -102,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 toTo.putExtra("fromOld", mButtonFrom.getText().toString());
                 toTo.putExtra("toOld", mButtonTo.getText().toString());
                 toTo.putExtra("isSwedish", isSwedish);
+                toTo.putExtra("stationChoice", stationChoice);
                 startActivity(toTo);
             }
         });

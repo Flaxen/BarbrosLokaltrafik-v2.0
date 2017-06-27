@@ -7,8 +7,8 @@ android {
         applicationId "com.alcaj.barbroslokaltrafik"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 3
-        versionName "0.3.11"
+        versionCode 3 // add one before APK build when about to publish update.
+        versionName "0.3.11" // 0.3.xx add one to the xx value and leave 0.3
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -17,7 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            debuggable false
+            debuggable true // make true for debugging and false before building APK
         }
     }
 }
