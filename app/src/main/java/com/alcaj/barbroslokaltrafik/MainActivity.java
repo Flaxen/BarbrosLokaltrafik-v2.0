@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     String stationChoice = "city";
 
     Boolean isSwedish = true;
+    String startPosFloor;
     String from;
     String to;
 
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         main = this;
 
+        startPosFloor = getIntent().getStringExtra("startPosFloor");
         from = getIntent().getStringExtra("fromInput");
         to = getIntent().getStringExtra("toInput");
         isSwedish = getIntent().getExtras().getBoolean("isSwedish");
@@ -104,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 toTo.putExtra("toOld", mButtonTo.getText().toString());
                 toTo.putExtra("isSwedish", isSwedish);
                 toTo.putExtra("stationChoice", stationChoice);
+                toTo.putExtra("startPosFloor", startPosFloor);
                 startActivity(toTo);
             }
         });
@@ -135,6 +138,11 @@ public class MainActivity extends AppCompatActivity {
 
                 toNavigation.putExtra(INPUT_POSITION_FROM_TO_NAV ,mButtonFrom.getText().toString());
                 toNavigation.putExtra(INPUT_POSITION_TO_TO_NAV, mButtonTo.getText().toString());
+
+                String pos = startPosFloor;
+                Log.d("SL", "Sending start pos " + pos);
+
+                toNavigation.putExtra("startPosFloor", startPosFloor);
                 toNavigation.putExtra("isSwedish", isSwedish);
                 startActivity(toNavigation);
 

@@ -27,6 +27,7 @@ public class ToActivity extends AppCompatActivity {
     String oldFrom;
     Boolean isSwedish;
     String stationChoice;
+    String startPosFloor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +60,7 @@ public class ToActivity extends AppCompatActivity {
         oldFrom = getIntent().getStringExtra("fromOld");
         isSwedish = getIntent().getExtras().getBoolean("isSwedish");
         stationChoice = getIntent().getStringExtra("stationChoice");
+        startPosFloor = getIntent().getStringExtra("startPosFloor"); // cache from FromActivity. Does not change here
 
         Log.d("SL", "stationChoice is " + stationChoice);
 
@@ -253,6 +255,7 @@ public class ToActivity extends AppCompatActivity {
 
         toMainActivity.putExtra(FROM_INPUT, oldFrom);
         toMainActivity.putExtra("isSwedish", isSwedish);
+        toMainActivity.putExtra("startPosFloor", startPosFloor);
         finish();
         MainActivity.main.finish();
         startActivity(toMainActivity);

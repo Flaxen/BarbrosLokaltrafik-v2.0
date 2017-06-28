@@ -20,6 +20,15 @@ public class FromActivity extends AppCompatActivity {
     final String TO_INPUT = "toInput";
     final String STARTPOS_FLOOR = "startPosFloor";
 
+    final String NAV_NORTH_MELLANPLAN = "NorraMellanplan";
+    final String NAV_PLATFORM = "Plattform";
+    final String NAV_CENTRALEAST_MELLANPLAN = "CentralaMellanplan";
+    //final String NAV_SOUTH_ENTRANCE = "Sodrauppgangen";  Grafik saknas
+    //final String NAV_NORTH_ENTRANCE = "Sodrauppgangen";  Grafik saknas. OBS, KAN VARA BILJETTHALL
+
+    //TODO: Kartor för fler plan saknas. Lägg till när grafik för dessa finns.
+
+
     Button mButtonSearch;
     Button mButtonChooseOnMap;
     EditText mEditTextSearchField;
@@ -110,7 +119,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Andetag");
-                toMainActivity.putExtra(STARTPOS_FLOOR, 1);
+                toMainActivity.putExtra(STARTPOS_FLOOR, NAV_NORTH_MELLANPLAN);
                 forslagButton();
             }
         });
@@ -128,7 +137,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Stad, Träd och Äng");
-                toMainActivity.putExtra(STARTPOS_FLOOR, 3);
+                toMainActivity.putExtra(STARTPOS_FLOOR, NAV_PLATFORM);
                 forslagButton();
             }
         });
@@ -146,7 +155,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Skies");
-                toMainActivity.putExtra(STARTPOS_FLOOR, 3);
+                toMainActivity.putExtra(STARTPOS_FLOOR, NAV_PLATFORM);
                 forslagButton();
             }
         });
@@ -155,6 +164,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "La Divina Commedia");
+               //toMainActivity.putExtra(STARTPOS_FLOOR, 3); city. karta saknad
                 forslagButton();
             }
         });
@@ -163,6 +173,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Vardagens Sal");
+                toMainActivity.putExtra(STARTPOS_FLOOR, NAV_PLATFORM);
                 forslagButton();
             }
         });
@@ -171,6 +182,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Cuckoo Clock");
+                toMainActivity.putExtra(STARTPOS_FLOOR, NAV_CENTRALEAST_MELLANPLAN);
                 forslagButton();
             }
         });
@@ -179,6 +191,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Moaritisk Absorbent");
+                toMainActivity.putExtra(STARTPOS_FLOOR, NAV_CENTRALEAST_MELLANPLAN);
                 forslagButton();
             }
         });
@@ -187,6 +200,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Pendlarkatedralen");
+                //toMainActivity.putExtra(STARTPOS_FLOOR, NAV_SOUTH_ENTRANCE); city. map missing
                 forslagButton();
             }
         });
@@ -195,6 +209,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Voyage");
+               // toMainActivity.putExtra(STARTPOS_FLOOR, 3); odenplan map missing
                 forslagButton();
             }
         });
@@ -203,6 +218,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Itinerary");
+                // toMainActivity.putExtra(STARTPOS_FLOOR, 3); odenplan map missing
                 forslagButton();
             }
         });
@@ -211,6 +227,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Länk");
+                // toMainActivity.putExtra(STARTPOS_FLOOR, 3); odenplan map missing
                 forslagButton();
             }
         });
@@ -219,6 +236,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Life Line");
+                // toMainActivity.putExtra(STARTPOS_FLOOR, 3); odenplan map missing
                 forslagButton();
             }
         });

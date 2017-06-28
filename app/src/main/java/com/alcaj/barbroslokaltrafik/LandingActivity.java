@@ -49,6 +49,7 @@ public class LandingActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(LandingActivity.this, MainActivity.class);
                 myIntent.putExtra("fromInput", getResources().getString(R.string.buttonFrom));
                 myIntent.putExtra("toInput", getResources().getString(R.string.buttonTo));
+                myIntent.putExtra("startPosFloor", "blank");
                 myIntent.putExtra("isSwedish", isSwedish);
                 startActivity(myIntent);
                 finish();
