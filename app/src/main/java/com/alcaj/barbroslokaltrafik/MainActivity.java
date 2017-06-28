@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     Button mButtonLanguage;
     Button mButtonSearch;
 
-    String stationChoice;
+    String stationChoice = "city";
 
     Boolean isSwedish = true;
     String from;

@@ -11,6 +11,8 @@ public class NavigationActivity extends AppCompatActivity {
     TextView mPosToPos;
     Button mButtonEnlargeMap;
 
+    String completeTravelString;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +24,10 @@ public class NavigationActivity extends AppCompatActivity {
         String mFromOutput = getIntent().getStringExtra("inputFromToNav");
         String mToOutput = getIntent().getStringExtra("inputToToNav");
 
+        String completeTravelDisplay = mFromOutput + " > " + mToOutput;
+        mPosToPos.setText(completeTravelDisplay);
 
-        String completeTravel = mFromOutput + " > " + mToOutput;
-        Log.d("SL", completeTravel);
 
-        mPosToPos.setText(completeTravel);
 
     }
 }

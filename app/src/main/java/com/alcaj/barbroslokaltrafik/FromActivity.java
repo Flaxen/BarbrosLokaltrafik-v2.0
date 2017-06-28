@@ -13,8 +13,12 @@ public class FromActivity extends AppCompatActivity {
 
     //TODO: convert all pieces of art to constants
 
+    //TODO: !!! Merge FromActivity and ToActivity to one ChoosePosActivity !!!
+
+
     final String FROM_INPUT = "fromInput";
     final String TO_INPUT = "toInput";
+    final String STARTPOS_FLOOR = "startPosFloor";
 
     Button mButtonSearch;
     Button mButtonChooseOnMap;
@@ -59,7 +63,12 @@ public class FromActivity extends AppCompatActivity {
         isSwedish = getIntent().getExtras().getBoolean("isSwedish");
         stationChoice = getIntent().getStringExtra("stationChoice");
 
-        if (stationChoice == "city") {
+        Log.d("SL", "stationChoice is " + stationChoice);
+
+        if (stationChoice.equals("city")) {
+
+            Log.d("SL", "if loop returned 'city'");
+
             // Makes the example buttons only contain pieces of art and stores at the chosen station.
 
             mButtonVoyage.setVisibility(View.GONE);
@@ -71,7 +80,9 @@ public class FromActivity extends AppCompatActivity {
 
             //TODO: Change map for choice of position
 
-        } else if (stationChoice == "odenplan") {
+        } else if (stationChoice.equals("odenplan")) {
+
+            Log.d("SL", "if loop returned 'odenplan'");
 
             mButtonSkies.setVisibility(View.GONE);
             mButtonAndetag.setVisibility(View.GONE);
@@ -99,6 +110,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Andetag");
+                toMainActivity.putExtra(STARTPOS_FLOOR, 1);
                 forslagButton();
             }
         });
@@ -107,6 +119,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Rörlig Rymd");
+                //toMainActivity.putExtra(STARTPOS_FLOOR, 3); odenpland missing maps
                 forslagButton();
             }
         });
@@ -114,7 +127,8 @@ public class FromActivity extends AppCompatActivity {
         mButtonStadTradAng.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toMainActivity.putExtra(FROM_INPUT, "Stadsträdgård");
+                toMainActivity.putExtra(FROM_INPUT, "Stad, Träd och Äng");
+                toMainActivity.putExtra(STARTPOS_FLOOR, 3);
                 forslagButton();
             }
         });
@@ -123,6 +137,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Odens trädgård");
+                //toMainActivity.putExtra(STARTPOS_FLOOR, ?); odenplan missing maps
                 forslagButton();
             }
         });
@@ -131,6 +146,7 @@ public class FromActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toMainActivity.putExtra(FROM_INPUT, "Skies");
+                toMainActivity.putExtra(STARTPOS_FLOOR, 3);
                 forslagButton();
             }
         });
