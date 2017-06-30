@@ -43,11 +43,34 @@
 
         </RelativeLayout>
 
-        <Button
-            android:id="@+id/buttonEnlargeMap"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="@drawable/mellanplankarta1medgrej"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/buttonEnlargeMap"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/mellanplankarta1medgrej" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_toLeftOf="@+id/button8"
+                android:background="@android:drawable/ic_media_rew"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/buttonEnlargeMap"
+                android:background="@android:drawable/ic_media_ff"
+                android:text="" />
+
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -109,7 +132,7 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/buttonArtPiece1"
+                        android:id="@+id/buttonArtPiece2"
                         android:layout_width="50dp"
                         android:layout_height="30dp"
                         android:layout_marginLeft="55dp"
@@ -118,7 +141,7 @@
                         android:text="" />
 
                     <Button
-                        android:id="@+id/buttonArtPiece2"
+                        android:id="@+id/buttonArtPiece6"
                         android:layout_width="50dp"
                         android:layout_height="30dp"
                         android:layout_marginLeft="35dp"
@@ -127,7 +150,7 @@
                         android:text="" />
 
                     <Button
-                        android:id="@+id/buttonArtPiece3"
+                        android:id="@+id/buttonArtPiece1"
                         android:layout_width="50dp"
                         android:layout_height="30dp"
                         android:layout_marginLeft="35dp"
@@ -145,7 +168,7 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/buttonArtPiece4"
+                        android:id="@+id/buttonArtPiece5"
                         android:layout_width="50dp"
                         android:layout_height="30dp"
                         android:layout_marginLeft="98dp"
@@ -154,7 +177,7 @@
                         android:text="" />
 
                     <Button
-                        android:id="@+id/buttonArtPiece5"
+                        android:id="@+id/buttonArtPiece3"
                         android:layout_width="50dp"
                         android:layout_height="30dp"
                         android:layout_marginLeft="35dp"
@@ -163,7 +186,7 @@
                         android:text="" />
 
                     <Button
-                        android:id="@+id/buttonArtPiece6"
+                        android:id="@+id/buttonArtPiece4"
                         android:layout_width="50dp"
                         android:layout_height="30dp"
                         android:layout_marginLeft="35dp"

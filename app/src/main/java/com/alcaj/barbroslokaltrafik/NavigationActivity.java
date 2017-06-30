@@ -11,9 +11,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.lang.reflect.Array;
+import java.util.Random;
 
 public class NavigationActivity extends AppCompatActivity {
 
+    final int MAX_AMOUNT_OF_ART_PIECES = 6;
+    final int FLOORS = 3;
 
     final String NAV_NORTH_MELLANPLAN = "NorraMellanplan";
     final int NAV_NORTH_MELLANPLAN_ART_AMOUNT = 1;
@@ -26,6 +29,17 @@ public class NavigationActivity extends AppCompatActivity {
     //final String NAV_NORTH_ENTRANCE = "Sodrauppgangen";  Grafik saknas. OBS, KAN VARA BILJETTHALL
     //final int NAV_NORTH_ENTRANCE_ART_AMOUNT = 0???;
 
+    final String CITY_ART_PLATFORM_1 = "Vardagens Sal";
+    final String CITY_ART_PLATFORM_2 = "Stad, Träd och Äng";
+    final String CITY_ART_PLATFORM_3 = "Skies";
+
+    final String CITY_ART_CENTRALEAST_MELLANPLAN_1 = "Cuckoo Clock";
+    final String CITY_ART_CENTRALEAST_MELLANPLAN_2 = "Moaritisk Absorbent";
+
+    final String CITY_ART_NORTH_MELLANPLAN_1 = "Andetag och Fotfäste";
+
+    // add missing pieces of art from list in drive SL - Projekt folder
+
     final int[] artAmountOnFloor = {
             NAV_PLATFORM_ART_AMOUNT,
             NAV_CENTRALEAST_MELLANPLAN_ART_AMOUNT,
@@ -34,6 +48,11 @@ public class NavigationActivity extends AppCompatActivity {
             //etc
 
     };
+
+    int[] existingMapId = new int[FLOORS];
+    String[] existingMapArray;
+    int mapIndex = 0;
+    int[] resources = new int[6];
 
 
 
@@ -48,6 +67,9 @@ public class NavigationActivity extends AppCompatActivity {
     Button mButtonArtPieceOnWay4;
     Button mButtonArtPieceOnWay5;
     Button mButtonArtPieceOnWay6;
+
+    Button mButtonNextMap;
+    Button mButtonBackMap;
 
     String completeTravelString;
 
@@ -65,9 +87,19 @@ public class NavigationActivity extends AppCompatActivity {
         mButtonArtPieceOnWay4 = (Button) findViewById(R.id.buttonArtPiece4);
         mButtonArtPieceOnWay5 = (Button) findViewById(R.id.buttonArtPiece5);
         mButtonArtPieceOnWay6 = (Button) findViewById(R.id.buttonArtPiece6);
+        mButtonNextMap = (Button) findViewById(R.id.button8);
+        mButtonBackMap = (Button) findViewById(R.id.button10);
 
         String mFromOutput = getIntent().getStringExtra("inputFromToNav");
         String mToOutput = getIntent().getStringExtra("inputToToNav");
+
+
+        resources[0] = getResources().getIdentifier("artstadtradangthumbnail", "drawable", getPackageName());
+        resources[1] = getResources().getIdentifier("artskiesthumbnail", "drawable", getPackageName());
+        resources[2] = getResources().getIdentifier("artmoaritiskabsorbentthumbnail", "drawable", getPackageName());
+        resources[3] = getResources().getIdentifier("artcuckooclockthumbnail", "drawable", getPackageName());
+        resources[4] = getResources().getIdentifier("artvardagsalthumbnail", "drawable", getPackageName());
+        resources[5] = getResources().getIdentifier("artandetagochfotfastethumbnail", "drawable", getPackageName());
 
         final Intent toDialog = new Intent(NavigationActivity.this, DialogImageArtOnWay.class);
 
@@ -109,38 +141,76 @@ public class NavigationActivity extends AppCompatActivity {
 
         int artPieces = 0;
 
-        for (int i = 0; i < mapArray.length; i++) {
+        existingMapArray = new String[mapArray.length];
 
-            int checkExistance = getResources().getIdentifier(stringToDrawableID(mapArray[i]), "drawable", getPackageName());
+        int mapsTrue = 0;
+        int checkExistance;
+        for (int i = 0; i < FLOORS; i++) {
 
+            checkExistance = getResources().getIdentifier(stringToDrawableID(mapArray[i]), "drawable", getPackageName());
+            Log.d("SL", "saker: " + checkExistance);
+            mapsTrue++;
             if (checkExistance != 0) {
                 artPieces = artPieces + artAmountOnFloor[i];
+                existingMapArray[i] = mapArray[i];
+                existingMapId[i] = getResources().getIdentifier(stringToDrawableID(mapArray[i]),"drawable",getPackageName());
             }
 
-            Log.d("SL", "YO LOOK HERE" + checkExistance);
-            Log.d("SL", " " + artPieces);
         }
+
+
+        //debug integer. DO NOT USE AT RELEASE
+        //artPieces = 6;
+
 
         //chance ArtOnWay image according to calculated amount of pieces of art
 
-        //String imageArtOnWayResId = "artonway" + artPieces + "locations";
         int imageArtOnWayResId = getResources().getIdentifier("artonway" + artPieces + "locations", "drawable", getPackageName());
         mButtonEnlargeMap.setBackgroundResource(resId);
         mImageViewArtOnWay.setImageResource(imageArtOnWayResId);
 
+        // change individual art piece images according to the ArtOnWay Image above
+
+        //sort all images for use in foor loop
+        Button[] artPieceButtons = {
+            mButtonArtPieceOnWay1,
+            mButtonArtPieceOnWay2,
+            mButtonArtPieceOnWay3,
+            mButtonArtPieceOnWay4,
+            mButtonArtPieceOnWay5,
+            mButtonArtPieceOnWay6
+        };
+
+
+        //make unwanted images invisible
+        for (int i = artPieces; i < MAX_AMOUNT_OF_ART_PIECES;  i++) {
+            artPieceButtons[i].setVisibility(View.INVISIBLE);
+        }
+
+        for (int i = 0; i < (MAX_AMOUNT_OF_ART_PIECES - (MAX_AMOUNT_OF_ART_PIECES - artPieces)); i++) {
 
 
 
+            artPieceButtons[i].setBackgroundResource(resources[i]);
+
+        }
 
 
+        // Button functions
+        mButtonNextMap.setOnClickListener(new View.OnClickListener() {
 
+            int mapIndex = 0;
 
-
-
-        mButtonEnlargeMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+             //   setMap(1);
+            }
+        });
 
+        mButtonBackMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //setMap(-1);
             }
         });
 
@@ -149,12 +219,48 @@ public class NavigationActivity extends AppCompatActivity {
         mButtonArtPieceOnWay1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
-
+                toDialog.putExtra("resId", resources[0]);
                 startActivity(toDialog);
+            }
+        });
 
+        mButtonArtPieceOnWay2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toDialog.putExtra("resId", resources[1]);
+                startActivity(toDialog);
+            }
+        });
+
+        mButtonArtPieceOnWay3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toDialog.putExtra("resId", resources[2]);
+                startActivity(toDialog);
+            }
+        });
+
+        mButtonArtPieceOnWay4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toDialog.putExtra("resId", resources[3]);
+                startActivity(toDialog);
+            }
+        });
+
+        mButtonArtPieceOnWay5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toDialog.putExtra("resId", resources[4]);
+                startActivity(toDialog);
+            }
+        });
+
+        mButtonArtPieceOnWay6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toDialog.putExtra("resId", resources[5]);
+                startActivity(toDialog);
             }
         });
     }
@@ -171,6 +277,21 @@ public class NavigationActivity extends AppCompatActivity {
 
         return string;
     }
+//
+//    public void setMap(int value) {
+//
+//        mapIndex = mapIndex + value;
+//
+//        if (mapIndex == existingMapArray.length) {
+//            mButtonEnlargeMap.setBackgroundResource(existingMapId[mapIndex]);
+//            mapIndex = 0;
+//
+//        } else if (mapIndex == 0) {
+//            mButtonEnlargeMap.setBackgroundResource(existingMapId[mapIndex]);
+//            mapIndex = existingMapArray.length;
+//
+//        }
+//    }
 
 
 }

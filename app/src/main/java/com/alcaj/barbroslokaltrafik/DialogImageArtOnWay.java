@@ -15,7 +15,10 @@ public class DialogImageArtOnWay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog_image_art_on_way);
 
+        int resId = getIntent().getExtras().getInt("resId");
+
         mDialog = (ImageView) findViewById(R.id.imageViewDialog);
+        mDialog.setImageResource(resId);
         mDialog.setClickable(true);
 
 
