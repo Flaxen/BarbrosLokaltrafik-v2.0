@@ -91,11 +91,88 @@
                 android:textColor="#000000"
                 android:textSize="20sp" />
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                app:srcCompat="@drawable/tempartonway" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageViewArtOnWay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@drawable/artonway6locations" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/buttonArtPiece1"
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="55dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/artandetagfotfastethumbnail"
+                        android:text="" />
+
+                    <Button
+                        android:id="@+id/buttonArtPiece2"
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/artandetagfotfastethumbnail"
+                        android:text="" />
+
+                    <Button
+                        android:id="@+id/buttonArtPiece3"
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/artandetagfotfastethumbnail"
+                        android:text="" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/buttonArtPiece4"
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="98dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/artandetagfotfastethumbnail"
+                        android:text="" />
+
+                    <Button
+                        android:id="@+id/buttonArtPiece5"
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/artandetagfotfastethumbnail"
+                        android:text="" />
+
+                    <Button
+                        android:id="@+id/buttonArtPiece6"
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/artandetagfotfastethumbnail"
+                        android:text="" />
+                </LinearLayout>
+
+            </RelativeLayout>
 
         </LinearLayout>
 
