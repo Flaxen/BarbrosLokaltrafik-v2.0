@@ -10,7 +10,7 @@ android {
         versionCode 3 // add one before APK build when about to publish update.
         versionName "0.3.11" // 0.3.xx add one to the xx value and leave 0.3
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }//wat
+    }
     buildTypes {
         release {
             minifyEnabled false
